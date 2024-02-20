@@ -22,8 +22,7 @@ def validate_and_execute():
 			elif user_input_num == 0:
 				print("You entered 0 days, no conversion for you")
 			else:
-				print(f"You entered {user_input_num}, a negative number!")
-		# we can also have except: to catch all errors
+				print(f"You entered {user_input_num}, a negative number!")	
 		except ValueError:
 			print(f"You entered {user_input_element}, Enter a positive integer!")
 
