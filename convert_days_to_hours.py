@@ -1,5 +1,5 @@
 
-import re
+from re import split
 
 conversion_val = 24
 unit = "hours"
@@ -30,7 +30,7 @@ def validate_and_execute():
 user_input = ""
 while user_input != "exit":
 	user_input = input("Enter the number of days to convert to hours or type exit :\n")
-	user_days = re.split('[,; 	]', user_input)
+	user_days = split('[,; 	]', user_input)
 	days = sorted(set(filter(None, user_days)))
 	# print(days)
 	for user_input_element in days:
