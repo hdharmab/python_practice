@@ -1,7 +1,6 @@
 
 import re
 
-print("use the .split() method to split the string user input into list of elements")
 conversion_val = 24
 unit = "hours"
 
