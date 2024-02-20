@@ -31,7 +31,7 @@ user_input = ""
 while user_input != "exit":
 	user_input = input("Enter the number of days to convert to hours or type exit :\n")
 	user_days = re.split('[,; 	]', user_input)
-	days = list(filter(None, user_days))
+	days = sorted(set(filter(None, user_days)))
 	# print(days)
 	for user_input_element in days:
 		validate_and_execute()
