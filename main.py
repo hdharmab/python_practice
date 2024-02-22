@@ -1,5 +1,6 @@
 """
 This program calculates the time remaining for a deadline
+Supplementary File: helper.py
 """
 from re import split
 from helper import validate_and_execute, user_input_message
