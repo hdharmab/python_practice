@@ -1,5 +1,5 @@
 """
-This program calculates the time remaining for a deadline
+This program converts days to hours
 Supplementary File: helper.py
 """
 from re import split
