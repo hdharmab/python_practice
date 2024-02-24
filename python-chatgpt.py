@@ -1,10 +1,8 @@
 """
-use following models : gpt-3.5-turbo-instruct, babbage-002, davinci-002, gpt-3.5-turbo
-for legacy endpoint /v1/completions
-tried model text_davinci-003 as well does not exist anymore
-all failed with error : 429 (exceeded current quota)
-have to pay for using API  
-
+for legacy endpoint /v1/completions use following models :
+    gpt-3.5-turbo-instruct, babbage-002, davinci-002, gpt-3.5-turbo
+newer endpoint such as v1/chat/completions use https://platform.openai.com/docs/models/model-endpoint-compatibility
+usage of OpenAi apis require payment
 """
 import requests
 import argparse
@@ -19,12 +17,9 @@ parser.add_argument("file_name", help="Name of the file to save the response as 
 args = parser.parse_args
 
 api_endpoint = "https://api.openai.com/v1/chat/completions"
-# in terminal run below before running the script
-# export OPENAI_API_KEY=api-key-here
-# the key is export to the variable and we can use it !
-# export noly works in UNIX 
-# windows use:  set OPENAI_API_KEY=api-key-here
-# to unset use: set OPENAI_API_KEY= , do not assign anything
+# UNIX: in terminal run export OPENAI_API_KEY=api-key-here before running the script
+# windows:  set OPENAI_API_KEY=api-key-here
+# windows unset: set OPENAI_API_KEY= , do not assign anything
 # power shell use: $env:OPENAI_API_KEY=api-key-here
 api_key = os.getenv("OPENAI_API_KEY")
 
@@ -34,7 +29,7 @@ request_headers = {
 }
 
 request_data = {
-    "model": "text_davinci-003", 
+    "model": "gpt-3.5-turbo", 
     # prompt for open ai model
     "prompt": f"Write python script forto {args.prompt}. Provide only code, no text",
     # number of words, commas etc in response. charged per number of tokens used
